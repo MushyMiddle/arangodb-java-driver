@@ -7,7 +7,7 @@
     <artifactId>arangodb-java-driver</artifactId>
     <version>6.16.1</version>
     <inceptionYear>2016</inceptionYear>
-    <packaging>jar</packaging>
+    <packaging>bundle</packaging>
 
     <name>arangodb-java-driver</name>
     <description>ArangoDB Java Driver</description>
@@ -210,6 +210,16 @@
                     </execution>
                 </executions>
             </plugin>
+	    <plugin>
+	      <groupId>org.apache.felix</groupId>
+	      <artifactId>maven-bundle-plugin</artifactId>
+	      <extensions>true</extensions>
+	      <configuration>
+		<instructions>
+		  <Export-Package>com.arangodb,com.arangodb.async,com.arangodb.async.internal,com.arangodb.async.internal.utils,com.arangodb.async.internal.velocystream,com.arangodb.entity,com.arangodb.entity.arangosearch,com.arangodb.entity.arangosearch.analyzer,com.arangodb.internal.cursor,com.arangodb.internal.http,com.arangodb.internal.mapping,com.arangodb.internal.net,com.arangodb.internal.util,com.arangodb.internal.velocypack,com.arangodb.internal.velocystream,com.arangodb.internal.velocystream.internal,com.arangodb.mapping,com.arangodb.model,com.arangodb.model.arangosearch,com.arangodb.util,com.arangodb.velocystream</Export-Package>
+		</instructions>
+	      </configuration>
+	    </plugin>
         </plugins>
     </build>
 
